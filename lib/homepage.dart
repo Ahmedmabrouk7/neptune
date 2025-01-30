@@ -58,17 +58,17 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 10.0,
                     ),
-                    // text filed date
-                    TextField(
-                      controller: dateController,
-                      decoration: const InputDecoration(
-                        border: OutlineInputBorder(),
-                        hintText: 'Date',
-                      ),
-                    ),
-                    const SizedBox(
-                      height: 10.0,
-                    ),
+                    // text filed date =========================================
+                    // TextField(
+                    //   controller: dateController,
+                    //   decoration: const InputDecoration(
+                    //     border: OutlineInputBorder(),
+                    //     hintText: 'Date',
+                    //   ),
+                    // ),
+                    // const SizedBox(
+                    //   height: 10.0,
+                    // ), ======================================================
                     // Add Button
                     TextButton(
                       onPressed: () {
@@ -78,14 +78,48 @@ class _HomePageState extends State<HomePage> {
                             Person(
                               title: titleController.text,
                               subject: subjectController.text,
-                              date: DateTime.parse(dateController.text),
+                              //date: DateTime.parse(dateController.text),
+                              date: DateTime.now(),
                             ),
                           );
                         });
                       },
                       child: const Text('Add note'),
-                    )
+                    ),
                   ],
+                ),
+              ),
+            ),
+          ),
+          Expanded(
+            child: Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Card(
+                child: Padding(
+                  padding: const EdgeInsets.all(5.0),
+                  // Todo : ListView
+                  child: ListView.builder(
+                      itemCount: boxPersons.length,
+                      itemBuilder: (context, index) {
+                        // Todo .getAt
+                        Person person = boxPersons.getAt(index);
+                        return ListTile(
+                          leading: IconButton(
+                            onPressed: () {
+                              //Todo .deleleAt
+                              setState(() {
+                                boxPersons.deleteAt(index);
+                              });
+                            },
+                            icon: const Icon(
+                              Icons.remove,
+                            ),
+                          ),
+                          title: Text(person.title),
+                          subtitle: Text(person.subject),
+                          trailing: Text('Date; ${person.date.toString()}'),
+                        );
+                      }),
                 ),
               ),
             ),
