@@ -58,18 +58,6 @@ class _HomePageState extends State<HomePage> {
                     const SizedBox(
                       height: 10.0,
                     ),
-                    // text filed date =========================================
-                    // TextField(
-                    //   controller: dateController,
-                    //   decoration: const InputDecoration(
-                    //     border: OutlineInputBorder(),
-                    //     hintText: 'Date',
-                    //   ),
-                    // ),
-                    // const SizedBox(
-                    //   height: 10.0,
-                    // ), ======================================================
-                    // Add Button
                     TextButton(
                       onPressed: () {
                         setState(() {
