@@ -78,7 +78,6 @@ class _HomePageState extends State<HomePage> {
                             Person(
                               title: titleController.text,
                               subject: subjectController.text,
-                              //date: DateTime.parse(dateController.text),
                               date: DateTime.now(),
                             ),
                           );
@@ -117,7 +116,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           title: Text(person.title),
                           subtitle: Text(person.subject),
-                          trailing: Text('Date; ${person.date.toString()}'),
+                          //trailing: Text('Date; ${person.date.toString()}'),
                         );
                       }),
                 ),

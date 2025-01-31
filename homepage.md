@@ -105,8 +105,8 @@ class _MyHomePageState extends State<MyHomePage> {
                               Icons.remove,
                             ),
                           ),
-                          subtitle: const Text('Name'),
                           title: Text(person.name),
+                          subtitle: const Text('Name'),
                           trailing: Text('age: ${person.age.toString()}'),
                         );
                       },
