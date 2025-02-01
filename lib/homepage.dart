@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:neptune/boxes.dart';
 import 'package:neptune/person.dart';
 
@@ -74,7 +75,10 @@ class _HomePageState extends State<HomePage> {
                           );
                         });
                       },
-                      child: const Text('Add note'),
+                      child: const Text(
+                        'Add note',
+                        style: TextStyle(fontWeight: FontWeight.bold),
+                      ),
                     ),
                   ],
                 ),
@@ -108,7 +112,11 @@ class _HomePageState extends State<HomePage> {
                           ),
                           title: Text(person.title),
                           subtitle: Text(person.subject),
-                          trailing: Text('${person.date.year}'),
+                          //trailing: Text('${person.date.year}'),
+                          trailing: Text(
+                            DateFormat.yMMMd().format(DateTime.now()),
+                            style: const TextStyle(fontSize: 10),
+                          ),
                         );
                       }),
                 ),
