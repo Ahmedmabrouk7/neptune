@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: const Color.fromARGB(255, 2, 19, 41),
       appBar: AppBar(
-        title: Text("Neptune notes"),
+        title: Text("Neptune by Ahmed Mabrouk"),
         backgroundColor: Colors.orange,
       ),
       body: Column(
@@ -112,9 +112,9 @@ class _HomePageState extends State<HomePage> {
                           ),
                           title: Text(person.title),
                           subtitle: Text(person.subject),
-                          //trailing: Text('${person.date.year}'),
+                          //trailing: Text('${person.date.year}') as DateTime,
                           trailing: Text(
-                            DateFormat.yMMMd().format(DateTime.now()),
+                            DateFormat.yMMMd().format(person.date),
                             style: const TextStyle(fontSize: 10),
                           ),
                         );
