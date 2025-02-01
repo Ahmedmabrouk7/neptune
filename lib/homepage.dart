@@ -26,9 +26,9 @@ class _HomePageState extends State<HomePage> {
       body: Column(
         children: [
           const SizedBox(height: 10.0),
-          Image.network(
-              'https://images-platform.99static.com/34OixtNawXfG4ugxds2Qqnl2aQo=/332x30:1680x1378/500x500/top/smart/99designs-contests-attachments/74/74261/attachment_74261695',
-              height: 150),
+          //Image.network(
+          //    'https://images-platform.99static.com/34OixtNawXfG4ugxds2Qqnl2aQo=/332x30:1680x1378/500x500/top/smart/99designs-contests-attachments/74/74261/attachment_74261695',
+          //    height: 100),
           Padding(
             padding: const EdgeInsets.all(5.0),
             child: Card(
@@ -41,7 +41,8 @@ class _HomePageState extends State<HomePage> {
                       controller: titleController,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: 'Title',
+                        //hintText: 'Title',
+                        labelText: 'Title',
                       ),
                     ),
                     const SizedBox(
@@ -50,9 +51,11 @@ class _HomePageState extends State<HomePage> {
                     // text filed Subject
                     TextField(
                       controller: subjectController,
+                      maxLines: 3,
                       decoration: const InputDecoration(
                         border: OutlineInputBorder(),
-                        hintText: 'Subject',
+                        //hintText: 'Subject',
+                        labelText: 'Subject',
                       ),
                     ),
                     const SizedBox(
@@ -82,6 +85,7 @@ class _HomePageState extends State<HomePage> {
             child: Padding(
               padding: const EdgeInsets.all(5.0),
               child: Card(
+                color: Colors.orange,
                 child: Padding(
                   padding: const EdgeInsets.all(5.0),
                   // Todo : ListView
@@ -104,7 +108,7 @@ class _HomePageState extends State<HomePage> {
                           ),
                           title: Text(person.title),
                           subtitle: Text(person.subject),
-                          //trailing: Text('Date; ${person.date.toString()}'),
+                          trailing: Text('${person.date.year}'),
                         );
                       }),
                 ),
